@@ -1,9 +1,9 @@
 # ledbanner
 
 Simple ATTINY85 and 6 LED modules MAX7219 based LED banner with scroll
-The code supports up to 20 characters text length.
+The code supports up to ~32 characters text length in ATTINY85 due to RAM size constraints.
 
-upload to ATTINY85 , connect all 6 MAX7219 modules in "daisy chain"
+upload to ATTINY85 , connect all  MAX7219 modules in "daisy chain" ( up to 16 supported )
 
 Connections to be made :
 
