@@ -17,3 +17,11 @@ MAX7219 CS_PIN	to ATTINY85 PB2 pin
 
 Connect 5V, GND to both ATTINY85 & all MAX7219 modules
 
+In the Source Code "main.c" please set following numbers according to your setup:
+
+// declare number of letters in scrolled text here
+#define NUMCHARS		26
+// declare number of daisy chained MAX7219 modules here
+#define MODULESNUMBER           4
+
+
