@@ -414,7 +414,8 @@ MAX7219_sendN(uint8_t N, uint8_t commands[])
 static void
 MAX7219_initN(uint8_t N)
 {
-        uint8_t  commands[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	uint8_t commands[MODULESNUMBER * 2];
+        // uint8_t  commands[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         uint8_t  i ; 
         DDRB |= _BV(MAX7219_DIN_PIN)|_BV(MAX7219_CLK_PIN)|_BV(MAX7219_CS_PIN);
 
