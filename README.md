@@ -27,3 +27,5 @@ In the Source Code "main.c" please set following numbers according to your setup
 #define MODULESNUMBER           4
 
 
+Some portion of source code was borrowed from Łukasz Podkalicki :
+https://github.com/lpodkalicki/blog/tree/master/avr/attiny13/040_random_flickering_pixels_on_max7219_8x8_led_display
