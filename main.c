@@ -41,7 +41,7 @@
 // declare number of letters in scrolled text here. Max is 50 letters
 #define NUMCHARS		26
 // declare number of daisy chained MAX7219 modules here. Max is 16 modules here
-#define MODULESNUMBER           6
+#define MODULESNUMBER           4
 // declare 8xNUMCHARS here, because every font letter is 8 bytes long
 #define BUFLENGTH		NUMCHARS*8
 
