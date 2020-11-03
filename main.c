@@ -1,6 +1,6 @@
 // ********************************************************************
-// SCROLLING LED TICKER ARRAY from N 8x8 LED modules of MAX7219
-// connected to singly ATTINY85 controlling chip
+// SCROLLING LED TICKER ARRAY from N 8x8 LED MAX7219 modules  
+// connected to single ATTINY85 controlling chip
 // (c) Adam Loboda '2020 
 // find me at adam.loboda@wp.pl
 // ********************************************************************
