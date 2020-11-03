@@ -1,6 +1,6 @@
 // ********************************************************************
-// SCROLLING LED TICKER ARRAY 8x8 and N modules of MAX7219
-// connected to ATTINY85 chip
+// SCROLLING LED TICKER ARRAY from N 8x8 LED modules of MAX7219
+// connected to singly ATTINY85 controlling chip
 // (c) Adam Loboda '2020 
 // find me at adam.loboda@wp.pl
 // ********************************************************************
@@ -9,7 +9,6 @@
 #include <stdint.h>
 #include <util/delay.h>
 #include <stdbool.h>
-#include <avr/io.h>
 #include <avr/io.h>
 #include <avr/pgmspace.h>
 
@@ -39,9 +38,9 @@
 #define MAX7219_CS_HIGH()               (PORTB |= _BV(MAX7219_CS_PIN))
 #define MAX7219_CS_LOW()                (PORTB &= ~_BV(MAX7219_CS_PIN))
 
-// declare number of letters in scrolled text here
+// declare number of letters in scrolled text here. Max is 32 letters
 #define NUMCHARS		26
-// declare number of daisy chained MAX7219 modules here
+// declare number of daisy chained MAX7219 modules here. Max is 16 modules here
 #define MODULESNUMBER           6
 // declare 8xNUMCHARS here, because every font letter is 8 bytes long
 #define BUFLENGTH		NUMCHARS*8
