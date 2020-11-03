@@ -29,5 +29,9 @@ In the Source Code "main.c" please set following numbers according to your setup
 #define MODULESNUMBER           4
 
 
-Some portion of source code was borrowed from Łukasz Podkalicki :
+Link to video how to program the ATTINY85 chip with USBASP programmer AVRDUDE app and AVR-GCC environment : https://www.youtube.com/watch?v=7klgyNzZ2TI
+
+---------------------------
+
+Some portion of source code was borrowed & modified from Łukasz Podkalicki sources:
 https://github.com/lpodkalicki/blog/tree/master/avr/attiny13/040_random_flickering_pixels_on_max7219_8x8_led_display
