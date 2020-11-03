@@ -1,8 +1,8 @@
 // ********************************************************************
 // SCROLLING LED TICKER ARRAY from N 8x8 LED MAX7219 modules  
 // connected to single ATTINY85 controlling chip
-// (c) Adam Loboda '2020 
-// find me at adam.loboda@wp.pl
+//    (c) Adam Loboda '2020 
+//     find me at adam.loboda@wp.pl
 // ********************************************************************
 
 
@@ -38,7 +38,7 @@
 #define MAX7219_CS_HIGH()               (PORTB |= _BV(MAX7219_CS_PIN))
 #define MAX7219_CS_LOW()                (PORTB &= ~_BV(MAX7219_CS_PIN))
 
-// declare number of letters in scrolled text here. Max is 32 letters
+// declare number of letters in scrolled text here. Max is 50 letters
 #define NUMCHARS		26
 // declare number of daisy chained MAX7219 modules here. Max is 16 modules here
 #define MODULESNUMBER           6
@@ -48,6 +48,7 @@
 
 const uint8_t  sentence[] PROGMEM = { "  Happy New Year 2021 !!! " };
 
+// buffer for bitmap representtion of displayed text 
 static uint8_t MAX7219_state[BUFLENGTH] = 
    { 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 
@@ -76,7 +77,7 @@ static uint8_t MAX7219_state[BUFLENGTH] =
      0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0 };
 
-
+// RAM buffer for manipulation and displaying characters on LED displays
 static uint8_t messagebuf[MODULESNUMBER*8] =
    { 0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0, 
@@ -87,7 +88,7 @@ static uint8_t messagebuf[MODULESNUMBER*8] =
      0, 0, 0, 0, 0, 0, 0, 0, 
      0, 0, 0, 0, 0, 0, 0, 0 };
 
-
+// ASCII character definition for CP437 font - 8 bytes (rows) per each character
 const uint8_t  cp437_font[] PROGMEM = 
   { 
    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, // 0x00
@@ -453,11 +454,12 @@ MAX7219_initN(uint8_t N)
 
 int   main(void)
 {
-	uint8_t row, col, i, j, k  = 0;
-        uint8_t letter = 0;
-	uint8_t data;
-        uint8_t offset, offset2;
-        uint8_t commands[MODULESNUMBER * 2];
+	uint8_t  row, col, i, j, k  = 0;
+        uint8_t  letter = 0;
+	uint8_t  data;
+        uint8_t  offset;  
+        uint16_t offset2;
+        uint8_t  commands[MODULESNUMBER * 2];
 
  
 	// initialize set of 6 daisy chained modules with MAX7219
