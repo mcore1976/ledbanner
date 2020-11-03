@@ -512,7 +512,7 @@ int   main(void)
                      // sending 8 rows data to N character display from 'messagebuf' array       
                       for(row=0; row<8; row++)
                       { 
-                      // send buffer content to N modules at once, first module is last in sentence 
+                      // send bitmap buffer content to N modules at once, first module is last in sequence 
                        for (k=0; k < MODULESNUMBER ; k++)
                         {   
                           commands[(k*2)] = row+1;
