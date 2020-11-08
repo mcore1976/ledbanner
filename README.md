@@ -1,6 +1,6 @@
 # ledbanner
 
-Simple ATTINY85 and 6 LED modules MAX7219 based LED banner with scroll
+Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner with scroll
 
 The source code file "main2.c" supports up to <250 characters text length in ATTINY85 due to RAM size constraints.
 
