@@ -4,7 +4,7 @@ Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner with scro
 
 The source code file "main2.c" supports up to <250 characters text length in ATTINY85 due to RAM size constraints.
 
-upload to ATTINY85 , connect all  MAX7219 modules in "daisy chain" ( up to 16 supported )
+Upload the code to  ATTINY85 chip by "compileattinyXXX" script, connect all  MAX7219 modules in "daisy chain" ( up to 16 supported )
 
 Connections to be made :
 
@@ -28,6 +28,8 @@ In the Source Code "main2.c" / "main.c" please set following numbers according t
 
 #define MODULESNUMBER           4
 
+
+Link to video showing this LED ticker working : https://www.youtube.com/watch?v=mL6LaHe1yhY
 
 Link to video how to program the ATTINY85 chip with USBASP programmer AVRDUDE app and AVR-GCC environment : https://www.youtube.com/watch?v=7klgyNzZ2TI
 
