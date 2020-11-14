@@ -2,7 +2,7 @@
 
 Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner with scroll
 
-The source code file "main2.c" supports more than 250 characters text length in ATTINY85. The "main.c" was a prototype code used for YT video.
+The source code file "main2.c" supports text even 5000 characters long and LED matrix up to 32 modules with ATTINY85 . The "main.c" was a prototype code used for YT video, please do not use it...
 
 Upload the code to  ATTINY85 chip by "compileattinyXXX" script, connect all  MAX7219 modules in "daisy chain" ( up to 16 supported )
 
