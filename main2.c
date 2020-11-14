@@ -39,9 +39,11 @@
 #define MAX7219_CS_HIGH()               (PORTB |= _BV(MAX7219_CS_PIN))
 #define MAX7219_CS_LOW()                (PORTB &= ~_BV(MAX7219_CS_PIN))
 
-// declare number of letters in scrolled text here. Max is 255 letters
+// declare number of letters in scrolled text here. Max is 5000 characters. 
+// Limitation for text definition comes from FLASH size in ATTINY85 
 #define NUMCHARS		35
-// declare number of daisy chained MAX7219 modules here. Max is 16 modules here
+// declare number of daisy chained MAX7219 modules here. 
+// Max is 32 modules here and limitation comes from SRAM size of ATTINY85 chip 
 #define MODULESNUMBER           6
 // calculation of buffer length needed for displaying, because every font letter is 8 bytes long
 #define BUFLENGTH		(MODULESNUMBER+1)*8
@@ -485,6 +487,8 @@ int   main(void)
             while (offset2 < 8)
               {
  	            _delay_ms(20);  // scrolling speed - decrease for faster scroll
+		                    // if you want even faster scrolling, you need to reporgram FUSE of ATTINY85
+		                    // for 8MHz clock without DIVision by 8 in compileattiny script
 
                       // convert rows of N displays into columns ( 90 degrees rotation )
                       for (letter=0; letter< MODULESNUMBER; letter++)
