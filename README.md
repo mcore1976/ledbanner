@@ -5,6 +5,7 @@ Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner / LED tic
 The source code file "main2.c" supports :
 - text even 5000 characters long (limited by ATTINY FLASH program memory capacity, the program takes up to 2,7KB )
 - Daisy chained LED 8x8 matrix up to 30 modules (limited by ATTINY85 only 512 bytes of SRAM memory).
+- customizable font by replacement of predefined cp437 8x8 dots font definition in fontdef[] array ( see here : http://dotmatrixtool.com/ and here https://www.instructables.com/LED-Scolling-Dot-Matrix-Font-Graphics-Generator-/ )
 
 The "main.c" was a prototype code used for YT video, please do not use it...
 
