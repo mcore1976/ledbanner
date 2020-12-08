@@ -1,0 +1,10 @@
+rm *.elf
+rm *.o
+rm *.hex
+avr-gcc -mmcu=attiny13 -std=gnu99 -Wall -Os -o main13.elf main13.c -w
+avr-objcopy -j .text -j .data -O ihex main13.elf main13.hex
+avr-size --mcu=attiny13 --format=avr main13.elf
+# default fuse values -  lfuse:w:0x62:m hfuse:w:0xdf:m
+#
+sudo avrdude -c usbasp -p attiny13   -U flash:w:"main13.hex":a
+
