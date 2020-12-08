@@ -1,6 +1,7 @@
 # ledbanner
 
 Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner / LED ticker with scrolling text
+There is also ATTINY13 version working with only 1024 bytes of FLASH and 64 bytes of RAM !
 
 The source code file "main2.c" supports :
 - text even 5000 characters long (limited by ATTINY FLASH program memory capacity, the program takes up to 2,7KB )
@@ -8,6 +9,7 @@ The source code file "main2.c" supports :
 - customizable font by replacement of predefined cp437 8x8 dots font definition in fontdef[] array ( see here : http://dotmatrixtool.com/ and here https://www.instructables.com/LED-Scolling-Dot-Matrix-Font-Graphics-Generator-/ )
 
 The "main.c" was a prototype code used for YT video, please do not use it...
+The "main13.c" is ultra hardcore version of code fitting into 1KB FLASH and 64 bytes of RAM (masterpiece !). It supports only 4 letter LED matrix and 100 characters of text message.
 
 Upload the code to  ATTINY85 chip by "compileattinyXXX" script, connect all  MAX7219 modules in "daisy chain".
 
