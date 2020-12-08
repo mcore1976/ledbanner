@@ -385,51 +385,51 @@ static void
 MAX7219_initN(uint8_t N)
 {
 	uint8_t commands[MODULESNUMBER * 2];
-        // uint8_t  commands[] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
         uint8_t  i ; 
-        DDRB |= _BV(MAX7219_DIN_PIN)|_BV(MAX7219_CLK_PIN)|_BV(MAX7219_CS_PIN);
+
+	DDRB |= _BV(MAX7219_DIN_PIN)|_BV(MAX7219_CLK_PIN)|_BV(MAX7219_CS_PIN);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_DECODEMODE;
            commands[(i*2)+1] = 0x00;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_SCANLIMIT;
            commands[(i*2)+1] = 0x07;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_INTENSITY;
            commands[(i*2)+1] = 0x0f;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_DISPLAYTEST;
            commands[(i*2)+1] = 0x00;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_SHUTDOWN;
            commands[(i*2)+1] = 0x01;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
         for (i=0; i<N; i++)
         {   
            commands[(i*2)] = MAX7219_REG_INTENSITY;
            commands[(i*2)+1] = 8;
         };
-        MAX7219_sendN(6, commands);
+        MAX7219_sendN(N, commands);
 
 };
 
