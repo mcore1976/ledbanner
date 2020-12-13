@@ -13,6 +13,8 @@ The "main.c" was a prototype code used for YT video, please do not use it...
 
 The "main13.c" is ultra hardcore version of code fitting into 1KB FLASH and 64 bytes of RAM (masterpiece !). It supports only 4 letter LED matrix and 100 characters of text message.
 
+The "main328.c" and "compileatmrga" is ATMEGA 328P version of LED ticker that can receive text message to be displayed on LED with serial port connection (9600bps, 8N1). Serial connection is made with FTDI232 chip and pins 2 & 3.
+
 Upload the code to  ATTINY85 chip by "compileattinyXXX" script, connect all  MAX7219 modules in "daisy chain".
 
 Connections to be made :
