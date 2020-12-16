@@ -391,13 +391,9 @@ unsigned char USART_receive(void){
 ISR(USART_RX_vect)
 {
         while ( !(UCSR0A & (1<<RXC0)) );
-	if (messagebufpos == UART_BUFFER_SIZE)          // if BUFFER_SIZE is reached, reset to start of buffer.
-               { messagebufpos = 0;  
-                 messagelength = UART_BUFFER_SIZE; 
-               };                                       // set pointer to buffer beginning & message length to max  
-
+	
 	messagebuf[messagebufpos] = UDR0;               // increment rxn and return new value.   
-
+	
         USART_send( messagebuf[messagebufpos] );        // send received character back as Echo over serial port 
 
         if ( (messagebuf[messagebufpos] == 0x0A) || (messagebuf[messagebufpos] == 0x0D) )
@@ -405,7 +401,12 @@ ISR(USART_RX_vect)
                    messagebufpos = 0; }                 // finish if received char CR or LF                                        
         else 
                {   messagebufpos++;  };                 // if not completed then collect next characters 
-  
+
+	if (messagebufpos == UART_BUFFER_SIZE)          // if BUFFER_SIZE is reached, reset to start of buffer.
+               { messagebufpos = 0;  
+                 messagelength = UART_BUFFER_SIZE; 
+               };                                       // set pointer to buffer beginning & message length to max  
+
 }
 
 
