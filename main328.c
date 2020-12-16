@@ -29,17 +29,20 @@
 #define BAUD_PRESCALLER (((F_CPU / (BAUDRATE * 16UL))) - 1)    //The formula that does all the required maths
 
 // size of text received from serial port
+// max is 1500 bytes because of amount of SRAM in ATMEGA chip
 #define UART_BUFFER_SIZE  512
 
 // Your text received over serial port will be copied to this buffer for LED scrolling
 // buffer for RX UART data to further send over CC1101
 static volatile uint8_t messagebuf[UART_BUFFER_SIZE] = { "            This is initial message. Send your data over serial port with setting 9600 baud, 1 stopbit, no parity               \r\n"  };
 
+// length of whole message received from serial port - initializing with prompt size
+static volatile uint16_t messagelength = 100;  
+
 // pointer for current character to UART reception buffer
 static volatile uint16_t messagebufpos = 0;
 
-// length of whole message received from serial port
-static volatile uint16_t messagelength = 100;  
+
 
 
 // MAX 7218 display library settings & procedures
