@@ -29,7 +29,7 @@
 #define BAUD_PRESCALLER (((F_CPU / (BAUDRATE * 16UL))) - 1)    //The formula that does all the required maths
 
 // size of text received from serial port
-#define UART_BUFFER_SIZE  1024
+#define UART_BUFFER_SIZE  512
 
 // Your text received over serial port will be copied to this buffer for LED scrolling
 // buffer for RX UART data to further send over CC1101
