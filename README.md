@@ -1,6 +1,6 @@
 # ledbanner
 
-Simple ATTINY85 and daisy chained LED modules MAX7219 based LED banner / LED ticker with scrolling text
+Simple ATTINY85 / ATMEGA328 + daisy chained LED modules MAX7219 based LED banner / LED ticker with scrolling text
 
 There is also ATTINY13 version working with only 1024 bytes of FLASH and 64 bytes of RAM !
 
@@ -9,9 +9,9 @@ The source code file "main2.c" supports :
 - Daisy chained LED 8x8 matrix up to 30 modules (limited by ATTINY85 only 512 bytes of SRAM memory).
 - customizable font by replacement of predefined cp437 8x8 dots font definition in fontdef[] array ( see here : http://dotmatrixtool.com/ and here https://www.instructables.com/LED-Scolling-Dot-Matrix-Font-Graphics-Generator-/ )
 
-The "main.c" was a prototype code used for YT video, please do not use it...
+The "main.c" was a prototype code used for YT video, please do not use it... Use "main2.c" for ATTINY85 or "main328.c" for ATMEGA328P
 
-The "main13.c" is ultra hardcore version of code fitting into 1KB FLASH and 64 bytes of RAM (masterpiece !). It supports only 4 letter LED matrix and 100 characters of text message.
+The "main13.c" is ultra hardcore version of code fitting into 1KB FLASH and 64 bytes of RAM (masterpiece !). It supports only 4 letter LED matrix and 100 characters of text message. It was just to prove that it is possible to use such small chip for this development.
 
 The "main328.c" and "compileatmega" are experimental ATMEGA 328P version of LED ticker that can receive text message to be displayed on LED with serial port connection (9600bps, 8N1). Serial connection is made from the PC with FTDI232 chip and pins 2 & 3. Putty is used to send message over serial to ATMEGA.
 
